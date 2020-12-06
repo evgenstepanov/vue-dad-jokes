@@ -1,12 +1,27 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div class="nav">
+    <router-link class="link nav__about" to="/">Home</router-link>
+    <router-link class="link nav__all-jokes" to="/alljokes"
+      >All jokes</router-link
+    >
   </div>
-  <router-view/>
+  <router-view />
 </template>
 
+<script>
+export default {
+  mounted() {
+    this.$store.dispatch('setCurrentJoke');
+  },
+};
+</script>
+
 <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -15,16 +30,21 @@
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
+.nav {
+  padding: 70px 0 50px;
 }
 
-#nav a {
+.nav__about {
+  margin-right: 6rem;
+}
+
+.link {
   font-weight: bold;
   color: #2c3e50;
+  text-decoration: none;
 }
 
-#nav a.router-link-exact-active {
+.router-link-exact-active {
   color: #42b983;
 }
 </style>
