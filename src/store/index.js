@@ -19,7 +19,6 @@ export default createStore({
   actions: {
     async setCurrentJoke(state) {
       try {
-        console.log('тут');
         const joke = await fetch(url, { headers });
         const jokeObj = await joke.json();
         state.commit('setCurrentJoke', jokeObj.joke);

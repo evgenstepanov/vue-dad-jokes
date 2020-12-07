@@ -29,21 +29,18 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
-
 .nav {
   padding: 70px 0 50px;
 }
-
 .nav__about {
-  margin-right: 6rem;
+  margin-right: 4rem;
 }
-
 .link {
   font-weight: bold;
   color: #2c3e50;
   text-decoration: none;
+  font-size: 24px;
 }
-
 .router-link-exact-active {
   color: #42b983;
 }
